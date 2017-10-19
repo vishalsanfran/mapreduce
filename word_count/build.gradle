@@ -1,0 +1,27 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+jar {
+  baseName = 'word_count'
+  version = '0.1.0'
+}
+
+repositories {
+  maven {
+    url "http://repository.mapr.com/maven/"
+  }
+  mavenCentral()
+}
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+dependencies {
+  compile("org.apache.hadoop:hadoop-client:2.7.0-mapr-1707")
+}
